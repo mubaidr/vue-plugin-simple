@@ -12,7 +12,9 @@
     "compile": "rollup -c",
     "build": "npm run purge && npm run compile",
     "lint": "eslint src/* test/*",
-    "beforePublish": "npm run lint && npm run build"
+    "beforePublish": "npm run lint && npm run build",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "files": [
     "dist/",
@@ -22,7 +24,8 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.16.4",
-    "vue": "latest"
+    "vue": "latest",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "eslint": "^3.7.1",
@@ -35,5 +38,6 @@
     "rollup-plugin-commonjs": "^5.0.5",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-vue": "^2.2.6"
-  }
+  },
+  "snyk": true
 }
